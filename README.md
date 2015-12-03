@@ -44,5 +44,5 @@ Update application:
 
 place configuration files in:
 
-    /var/local/secret/application.ini
-    /var/local/secret/gid.ini
+    /var/local/secret/eea.docker.uwwtd_web_dem/application.ini
+    /var/local/secret/eea.docker.uwwtd_web_dem/gid.ini
