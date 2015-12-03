@@ -17,13 +17,13 @@ prepare the data containers:
 
 
 
-dump data from <donor host>
+dump data from donor host
 
     docker run --rm --volumes-from=uwwtd_web_dem_home -v $(pwd):/backup busybox tar cvfp /backup/uwwtd_web_dem_home.tar /var/www
 
     docker run --rm --volumes-from=uwwtd_web_dem_data -v $(pwd):/backup busybox tar cvfp /backup/uwwtd_web_dem_data.tar /var/lib/mysql
 
-run at <target host>
+run at target host
 
     docker run --rm --volumes-from=uwwtd_web_dem_home -v $(pwd):/backups busybox tar xvf /backups/uwwtd_web_dem_home.tar 
 
