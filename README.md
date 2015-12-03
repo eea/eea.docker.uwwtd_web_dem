@@ -31,7 +31,7 @@ import application and data to target host
 Update application:
 
     /var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose stop
-    docker run -it --rm --volumes-from=uwwtd_web_dem_home busybox sh
+    docker run -it --rm --volumes-from=uwwtd_web_dem_home ubuntu bash
     #apt-get update
     #apt-get install subversion
     #cd svn checkout https://svn.eionet.europa.eu/repositories/PHP/trunk/UWWTD-WEB-DEM/UWWTD_Final/
