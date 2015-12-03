@@ -15,7 +15,7 @@ prepare the data containers:
     docker run -d --name uwwtd_web_dem_home eeacms/php_data 
     docker run -d --name uwwtd_web_dem_data eeacms/mysql_data
 
-dump application and data from donor host
+dump application and data from donor host (stop database service first)
 
     docker run --rm --volumes-from=uwwtd_web_dem_home -v $(pwd):/backup busybox tar cvfp /backup/uwwtd_web_dem_home.tar /var/www
 
