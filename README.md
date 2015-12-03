@@ -2,22 +2,28 @@
 
 run the container:
 
-    docker run --restart=always --name uwwtd_web_dem --volumes-from=uwwtd_web_dem_data --volumes-from=uwwtd_web_dem_home  -p <port_host>:80 -e MYSQL_ROOT_PASSWORD=<secret_password> -d eeacms/uwwtd_web_dem
+/var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose up -d
 
-current <port_host> = 50004
+install/first run:
 
-moving data volume containers from one host to another: 
+    cd /var/local/deploy/
+    git clone https://github.com/eea/eea.docker.uwwtd_web_dem.git
+    docker-compose build
 
-<donor host>
+prepare the data containers:
+
+    docker run -d --name uwwtd_web_dem_home eeacms/php_data 
+    docker run -d --name uwwtd_web_dem_data eeacms/mysql_data
+
+
+
+dump data from <donor host>
 
     docker run --rm --volumes-from=uwwtd_web_dem_home -v $(pwd):/backup busybox tar cvfp /backup/uwwtd_web_dem_home.tar /var/www
 
     docker run --rm --volumes-from=uwwtd_web_dem_data -v $(pwd):/backup busybox tar cvfp /backup/uwwtd_web_dem_data.tar /var/lib/mysql
 
-<target host>
-
-    docker run -d --name uwwtd_web_dem_home eeacms/php_data 
-    docker run -d --name uwwtd_web_dem_data eeacms/mysql_data
+run at <target host>
 
     docker run --rm --volumes-from=uwwtd_web_dem_home -v $(pwd):/backups busybox tar xvf /backups/uwwtd_web_dem_home.tar 
 
