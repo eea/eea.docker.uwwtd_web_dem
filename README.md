@@ -2,7 +2,7 @@
 
 run the container:
 
-/var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose up -d
+    /var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose up -d
 
 install/first run:
 
