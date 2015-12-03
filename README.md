@@ -35,7 +35,7 @@ Update application:
     #apt-get update
     #apt-get install subversion
     #cd svn checkout https://svn.eionet.europa.eu/repositories/PHP/trunk/UWWTD-WEB-DEM/UWWTD_Final/
-    #rm -r /var/www/UWWTD-WEB-DEM
+    #mv /var/www/UWWTD-WEB-DEM /var/www/UWWTD-WEB-DEM_bak -- if you dare: rm -r /var/www/UWWTD-WEB-DEM
     #mv UWWTD_Final /var/www/UWWTD-WEB-DEM
     #chown -R www-data /var/www/UWWTD-WEB-DEM
     #chgrp -R www-data /var/www/UWWTD-WEB-DEM
