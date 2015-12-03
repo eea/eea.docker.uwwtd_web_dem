@@ -41,3 +41,8 @@ Update application:
     #chgrp -R www-data /var/www/UWWTD-WEB-DEM
     
     /var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose start
+
+place configuration files in:
+
+    /var/local/secret/application.ini
+    /var/local/secret/gid.ini
