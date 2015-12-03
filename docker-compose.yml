@@ -2,7 +2,7 @@ php_53:
   restart: always
   build: php
   volumes:
-    - /var/local/secret:/var/www/UWWTD-WEB-DEM/application/configs
+    - /var/local/secret/eea.docker.uwwtd_web_dem:/var/www/UWWTD-WEB-DEM/application/configs
   volumes_from:
     - uwwtd_web_dem_home_5_3
   ports:
