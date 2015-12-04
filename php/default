@@ -1,42 +1,19 @@
 <VirtualHost *:80>
-        ServerAdmin webmaster@localhost
-        TimeOut 600
+# UWWTD
         ProxyTimeout 120
-        
+        #ServerName uwwtd.eionet.europa.eu
         php_value post_max_size 50M
         php_value memory_limit 512M
         php_value upload_max_filesize 60M
 
+#       php_flag  display_errors  off
+#       php_flag  magic_quotes_gpc off
+
+        #CustomLog /var/www/www-logs/uwwtddem/access combined
         DocumentRoot /var/www/UWWTD-WEB-DEM/public
-        <Directory />
-                Options FollowSymLinks
-                AllowOverride None
-        </Directory>
-        
+
         <Directory /var/www/UWWTD-WEB-DEM>
-                AllowOverride FileInfo AuthConfig Limit
-        </Directory>
-        
-        <Directory /var/www/UWWTD-WEB-DEM/public>
-                Options Indexes FollowSymLinks MultiViews
-                AllowOverride All
-                Order allow,deny
-                allow from all
+             AllowOverride FileInfo AuthConfig Limit
         </Directory>
 
-        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
-        <Directory "/usr/lib/cgi-bin">
-                AllowOverride None
-                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-                Order allow,deny
-                Allow from all
-        </Directory>
-
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-
-        # Possible values include: debug, info, notice, warn, error, crit,
-        # alert, emerg.
-        LogLevel warn
-
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
