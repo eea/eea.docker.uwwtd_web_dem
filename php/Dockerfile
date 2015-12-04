@@ -18,7 +18,7 @@ COPY php.ini /etc/php5/apache2/php.ini
 
 #COPY application.ini /var/www/UWWTD-WEB-DEM/application/configs/application.ini
 
-RUN a2enmod php5 ldap rewrite
+RUN a2enmod php5 ldap rewrite proxy_http
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
