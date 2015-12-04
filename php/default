@@ -1,6 +1,6 @@
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-
+        TimeOut 600
         ProxyTimeout 120
         
         php_value post_max_size 50M
