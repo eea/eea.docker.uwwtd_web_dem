@@ -12,6 +12,11 @@
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
+        
+        <Directory /var/www/UWWTD-WEB-DEM>
+                AllowOverride FileInfo AuthConfig Limit
+        </Directory>
+        
         <Directory /var/www/UWWTD-WEB-DEM/public>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride All
