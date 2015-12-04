@@ -1,6 +1,6 @@
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-        ProxyTimeout 120
+
         DocumentRoot /var/www/UWWTD-WEB-DEM/public
         <Directory />
                 Options FollowSymLinks
