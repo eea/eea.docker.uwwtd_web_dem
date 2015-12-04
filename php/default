@@ -1,6 +1,12 @@
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
 
+        ProxyTimeout 120
+        
+        php_value post_max_size 50M
+        php_value memory_limit 512M
+        php_value upload_max_filesize 60M
+
         DocumentRoot /var/www/UWWTD-WEB-DEM/public
         <Directory />
                 Options FollowSymLinks
