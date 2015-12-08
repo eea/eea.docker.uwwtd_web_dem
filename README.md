@@ -30,7 +30,8 @@ import application and data to target host
 
 Update application:
 
-    /var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose stop
+    cd /var/local/deploy/eea.docker.uwwtd_web_dem
+    docker-compose stop
     docker run -it --rm --volumes-from=uwwtd_web_dem_home ubuntu bash
     #apt-get update
     #apt-get install -y subversion
@@ -40,4 +41,5 @@ Update application:
     #chown -R www-data /var/www/UWWTD-WEB-DEM
     #chgrp -R www-data /var/www/UWWTD-WEB-DEM
     
-    /var/local/deploy/eea.docker.uwwtd_web_dem/docker-compose start
+    cd /var/local/deploy/eea.docker.uwwtd_web_dem
+    docker-compose start
