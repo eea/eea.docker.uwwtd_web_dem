@@ -10,6 +10,6 @@ home:
 
 database:
   restart: always
-  image: mysql:5.5
+  build: mysql
   volumes_from:
     - uwwtd_web_dem_data
