@@ -14,7 +14,7 @@ RUN apt-get -y update && apt-get install -y apache2 \
         subversion
 
 #debian 8
-COPY default /etc/apache2/sites-available/000-default.conf
+#COPY default /etc/apache2/sites-available/000-default.conf
 
 #debian 6-7
 COPY default /etc/apache2/sites-available/default
