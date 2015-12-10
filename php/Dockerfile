@@ -13,10 +13,13 @@ RUN apt-get -y update && apt-get install -y apache2 \
         mysql-client  \
         subversion
 
-COPY default /etc/apache2/sites-available/default
-COPY php.ini /etc/php5/apache2/php.ini
+#debian 8
+COPY default /etc/apache2/sites-available/000-default.conf
 
-#COPY application.ini /var/www/UWWTD-WEB-DEM/application/configs/application.ini
+#debian 6-7
+COPY default /etc/apache2/sites-available/default
+
+COPY php.ini /etc/php5/apache2/php.ini
 
 RUN a2enmod php5 ldap rewrite proxy_http
 
