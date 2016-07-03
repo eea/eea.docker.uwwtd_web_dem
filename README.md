@@ -56,3 +56,14 @@ Update application:
 # cd /var/local/deploy/eea.docker.uwwtd_web_dem
 # docker-compose start
 ```
+
+## Release to production
+
+The production deployment isn't made with `git clone` and `docker-compose build`.
+Instead it pulls an image from Docker Hub. When you have tested your changes
+and are satisfied, then you must push a new image up. Here is how you do it:
+
+    docker build -t eeacms/uwwtd_web_dem:latest php
+    docker push eeacms/uwwtd.web_dem:latest
+
+This mechanism will allow us to later implement release versioning and rollback of deployments.
